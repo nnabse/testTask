@@ -11,7 +11,8 @@
       "@constants/*": ["src/app/constants/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
       "@environments/*": ["src/environments/*"],
-      "@guards/*": ["src/app/guards/*"]
+      "@guards/*": ["src/app/guards/*"],
+      "@interceptors/*": ["src/app/interceptors/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
