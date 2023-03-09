@@ -17,11 +17,9 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (request.url === `${environment.SERVER_URL}${ApiLink.AUTH}`)
-      return next.handle(request);
-
     const token = localStorage.getItem(TOKEN);
-    if (!token) return next.handle(request);
+    if (request.url === `${environment.SERVER_URL}${ApiLink.AUTH}` || !token)
+      return next.handle(request);
 
     const cloneReq = request.clone({
       headers: request.headers.set(AUTH_TOKEN, token),
