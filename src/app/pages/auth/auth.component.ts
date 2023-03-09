@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PageName } from '@enums/pageName.enums';
+import { Route } from '@enums/route.enums';
 
 @Component({
   selector: 'app-auth',
@@ -14,7 +15,7 @@ export class AuthComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    if (this.router.url === '/signIn') this.currentRoute = PageName.SIGN_IN;
-    if (this.router.url === '/signUp') this.currentRoute = PageName.SIGN_UP;
+    if (this.router.url === Route.SIGN_IN) this.currentRoute = PageName.SIGN_IN;
+    if (this.router.url === Route.SIGN_UP) this.currentRoute = PageName.SIGN_UP;
   }
 }
