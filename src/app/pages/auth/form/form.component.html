@@ -1,0 +1,69 @@
+<div class="form">
+  <!-- SignIn form  -->
+  <form
+    *ngIf="formType === pageName.SIGN_IN"
+    [formGroup]="authForm"
+    class="sign-in-form"
+  >
+    <div class="title"><h1>Welcome!</h1></div>
+    <div class="inputs">
+      <input
+        formControlName="login"
+        class="input input-login-1"
+        type="text"
+        placeholder="your login"
+      />
+      <input
+        formControlName="password"
+        class="input input-password-1"
+        type="password"
+        placeholder="password"
+      />
+    </div>
+    <div class="submit-btn">
+      <button (click)="buttonAction()" [disabled]="authForm.invalid">
+        login
+      </button>
+    </div>
+    <div class="redirect-link">
+      <a [routerLink]="route.SIGN_UP">haven't account?</a>
+    </div>
+  </form>
+
+  <!-- SignUp form -->
+  <form
+    *ngIf="formType === pageName.SIGN_UP"
+    [formGroup]="authForm"
+    class="sign-up-form"
+  >
+    <div class="title"><h1>Welcome!</h1></div>
+    <div class="inputs">
+      <input
+        formControlName="login"
+        class="input input-login-2"
+        type="text"
+        placeholder="your login"
+      />
+      <input
+        formControlName="password"
+        class="input input-password-2"
+        type="password"
+        placeholder="password"
+      />
+      <input
+        formControlName="passwordRepeat"
+        class="input input-password-3"
+        type="password"
+        placeholder="password repeat"
+      />
+    </div>
+    <div class="submit-btn">
+      <button (click)="buttonAction()" [disabled]="authForm.invalid">
+        register
+      </button>
+    </div>
+    <div class="redirect-link">
+      <a [routerLink]="route.SIGN_IN">already have an account?</a>
+    </div>
+  </form>
+</div>

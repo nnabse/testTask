@@ -10,7 +10,7 @@
       "@enums/*": ["src/app/enums/*"],
       "@constants/*": ["src/app/constants/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@environments/*": ["src/environments/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
