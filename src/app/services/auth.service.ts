@@ -11,14 +11,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
-  public signIn(body: Auth): Observable<ServerResponse> {
-    return this.httpClient.post<ServerResponse>(
-      `${environment.SERVER_URL}${ApiLink.AUTH}`,
-      body
-    );
-  }
-
-  public signUp(body: Auth): Observable<ServerResponse> {
+  public auth(body: Auth): Observable<ServerResponse> {
     return this.httpClient.post<ServerResponse>(
       `${environment.SERVER_URL}${ApiLink.AUTH}`,
       body

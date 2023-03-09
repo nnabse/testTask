@@ -50,26 +50,11 @@ export class FormComponent implements OnChanges {
 
   buttonAction(): void {
     const { login, password } = this.authForm.value;
-    const data = { login, password };
-    this.formType === this.pageName.SIGN_IN
-      ? this.signIn(data)
-      : this.signUp(data);
+    this.authService.auth({ login, password }).subscribe((response) => {
+      if (!response) return;
+      localStorage.setItem(TOKEN, response.auth_token);
+      this.router.navigate([Route.MAIN]);
+    });
     this.clearPasswordFields();
-  }
-
-  signIn(data: Auth): void {
-    this.authService.signIn(data).subscribe((response) => {
-      if (!response) return;
-      localStorage.setItem(TOKEN, response.auth_token);
-      this.router.navigate([Route.MAIN]);
-    });
-  }
-
-  signUp(data: Auth): void {
-    this.authService.signUp(data).subscribe((response) => {
-      if (!response) return;
-      localStorage.setItem(TOKEN, response.auth_token);
-      this.router.navigate([Route.MAIN]);
-    });
   }
 }
