@@ -7,21 +7,31 @@
   >
     <div class="title"><h1>Welcome!</h1></div>
     <div class="inputs">
-      <input
-        formControlName="login"
-        class="input input-login-1"
-        type="text"
-        placeholder="your login"
-      />
-      <input
-        formControlName="password"
-        class="input input-password-1"
-        type="password"
-        placeholder="password"
-      />
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="login"
+          type="text"
+          placeholder="your login"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          placeholder="password"
+        />
+      </mat-form-field>
     </div>
     <div class="submit-btn">
-      <button (click)="buttonAction()" [disabled]="authForm.invalid">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="buttonAction()"
+        [disabled]="authForm.invalid"
+      >
         login
       </button>
     </div>
@@ -38,27 +48,40 @@
   >
     <div class="title"><h1>Welcome!</h1></div>
     <div class="inputs">
-      <input
-        formControlName="login"
-        class="input input-login-2"
-        type="text"
-        placeholder="your login"
-      />
-      <input
-        formControlName="password"
-        class="input input-password-2"
-        type="password"
-        placeholder="password"
-      />
-      <input
-        formControlName="passwordRepeat"
-        class="input input-password-3"
-        type="password"
-        placeholder="password repeat"
-      />
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="login"
+          type="text"
+          placeholder="your login"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          placeholder="password"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="passwordRepeat"
+          type="password"
+          placeholder="password repeat"
+        />
+      </mat-form-field>
     </div>
     <div class="submit-btn">
-      <button (click)="buttonAction()" [disabled]="authForm.invalid">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="buttonAction()"
+        [disabled]="authForm.invalid"
+      >
         register
       </button>
     </div>

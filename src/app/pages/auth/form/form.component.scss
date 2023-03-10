@@ -19,7 +19,7 @@
       margin-bottom: 2.8vw;
 
       h1 {
-        color: $purple;
+        color: $blue;
         font-size: $font-big;
       }
     }
@@ -27,31 +27,6 @@
     .inputs {
       display: flex;
       flex-direction: column;
-
-      .input {
-        width: 100%;
-        height: 4vw;
-        border: 0.1vw solid $purple;
-        border-radius: 6vw;
-        margin-bottom: 2.5vw;
-        padding: 1.5vw;
-        color: $purple;
-        font-size: $font-sm;
-        transition: 0.2s;
-
-        &::placeholder {
-          color: $purple;
-        }
-
-        &:hover {
-          box-shadow: 0 0 2vw $purple-lighter;
-          transition: 0.2s;
-        }
-      }
-      .input:focus,
-      .input:active {
-        outline: 0.1vw solid $purple;
-      }
     }
 
     .submit-btn {
@@ -63,17 +38,7 @@
         width: 100%;
         height: 100%;
         color: white;
-        background-color: $purple;
-        border: none;
-        border-radius: 6vw;
-        font-size: $font-md;
         text-transform: capitalize;
-        transition: 0.2s;
-
-        &:hover:enabled {
-          box-shadow: 0 0 1vw $purple-light;
-          transition: 0.2s;
-        }
       }
     }
 
@@ -83,7 +48,7 @@
 
       a {
         font-size: $font-sm;
-        color: $purple-text-light;
+        color: $blue-text-light;
         text-decoration: none;
       }
     }
