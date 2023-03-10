@@ -6,6 +6,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AUTH_TOKEN } from '@constants/auth.constants';
+import { AUTHORIZATION } from '@constants/headers.constants';
 import { TOKEN } from '@constants/localStorage.constants';
 import { ApiLink } from '@enums/apiLink.enums';
 import { environment } from '@environments/environment';
@@ -22,7 +23,7 @@ export class TokenInterceptor implements HttpInterceptor {
       return next.handle(request);
 
     const cloneReq = request.clone({
-      headers: request.headers.set(AUTH_TOKEN, token),
+      headers: request.headers.set(AUTHORIZATION, token),
     });
     return next.handle(cloneReq);
   }
