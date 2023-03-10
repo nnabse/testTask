@@ -36,11 +36,19 @@ export class MainComponent implements OnInit, AfterViewInit {
     private dialog: MatDialog
   ) {}
 
+  ngOnInit() {
+    this.clientsService.getClientList().subscribe((response) => {
+      if (!response) return;
+      this.clientList = response.passes;
+      this.dataSource.data = this.clientList;
+      this.isLoaded = true;
+    });
+  }
+
   ngAfterViewInit() {
     if (!this.sort) return;
     this.dataSource.sort = this.sort;
   }
-
   filterData(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -49,15 +57,6 @@ export class MainComponent implements OnInit, AfterViewInit {
   openDialog(): void {
     this.dialog.open(DialogPushComponent, {
       data: this.clientList,
-    });
-  }
-
-  ngOnInit() {
-    this.clientsService.getClientList().subscribe((response) => {
-      if (!response) return;
-      this.clientList = response.passes;
-      this.dataSource.data = this.clientList;
-      this.isLoaded = true;
     });
   }
 }

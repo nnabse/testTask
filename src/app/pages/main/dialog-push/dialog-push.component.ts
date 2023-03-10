@@ -22,7 +22,7 @@ export class DialogPushComponent {
     private snackbarService: SnackbarService
   ) {}
 
-  selChange(event: MatSelectChange): void {
+  selectChange(event: MatSelectChange): void {
     this.selected = event.value;
   }
 
