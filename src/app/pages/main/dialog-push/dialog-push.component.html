@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Select users who should receive push notifications</h1>
+<div class="content" mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Users</mat-label>
+    <mat-select
+      [formControl]="selectedClients"
+      multiple
+      (selectionChange)="selectChange($event)"
+    >
+      <mat-option *ngFor="let client of data" [value]="client.user_id">
+        {{ client.last_name }} (id {{ client.user_id }})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="selectedClients.value" class="list">
+    <p>selected:</p>
+    <ul>
+      <li *ngFor="let el of selectedClients.value">{{ el }}</li>
+    </ul>
+  </div>
+  <button
+    [disabled]="selectedClients.invalid"
+    (click)="submit()"
+    mat-raised-button
+    color="primary"
+  >
+    send!
+  </button>
+</div>
+
+<div mat-dialog-actions>
+  <button
+    class="btn btn-close"
+    mat-raised-button
+    [mat-dialog-close]="true"
+    color="primary"
+  >
+    Close
+  </button>
+</div>
