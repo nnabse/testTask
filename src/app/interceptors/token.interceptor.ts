@@ -5,7 +5,6 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AUTH_TOKEN } from '@constants/auth.constants';
 import { AUTHORIZATION } from '@constants/headers.constants';
 import { TOKEN } from '@constants/localStorage.constants';
 import { ApiLink } from '@enums/apiLink.enums';
