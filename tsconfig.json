@@ -12,7 +12,8 @@
       "@interfaces/*": ["src/app/interfaces/*"],
       "@environments/*": ["src/environments/*"],
       "@guards/*": ["src/app/guards/*"],
-      "@interceptors/*": ["src/app/interceptors/*"]
+      "@interceptors/*": ["src/app/interceptors/*"],
+      "@material/*": ["src/app/material/*"],
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
